@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1769429609357,
+      "tag": "0000_chemical_nightcrawler",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1769429856600,
+      "tag": "0001_loving_photon",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1769430401918,
+      "tag": "0002_fixed_angel",
+      "breakpoints": true
+    }
+  ]
+}

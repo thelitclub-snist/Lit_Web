@@ -1,0 +1,1 @@
+ALTER TABLE `lit_weekly_issues` ADD `is_published` int DEFAULT 0 NOT NULL;

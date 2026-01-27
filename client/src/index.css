@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Editorial Palette: Parchment & Ink */
+  --background: oklch(0.96 0.01 85); /* Warm parchment */
+  --foreground: oklch(0.25 0.02 85); /* Deep ink gray */
+  
+  --primary: oklch(0.35 0.08 20); /* Muted Maroon/Oxblood */
+  --primary-foreground: oklch(0.98 0.01 85);
+  
+  --card: oklch(0.94 0.02 85); /* Slightly darker parchment */
+  --card-foreground: oklch(0.25 0.02 85);
+  
+  --popover: oklch(0.94 0.02 85);
+  --popover-foreground: oklch(0.25 0.02 85);
+  
+  --secondary: oklch(0.45 0.05 150); /* Muted Olive/Sage */
+  --secondary-foreground: oklch(0.98 0.01 85);
+  
+  --muted: oklch(0.85 0.02 85);
+  --muted-foreground: oklch(0.45 0.02 85);
+  
+  --accent: oklch(0.35 0.08 20);
+  --accent-foreground: oklch(0.98 0.01 85);
+  
+  --destructive: oklch(0.5 0.15 25);
+  --destructive-foreground: oklch(0.98 0.01 85);
+  
+  --border: oklch(0.8 0.02 85);
+  --input: oklch(0.9 0.02 85);
+  --ring: oklch(0.35 0.08 20);
+  
+  --radius: 0rem; /* Sharp edges for editorial feel */
+  
+  --sidebar: oklch(0.96 0.01 85);
+  --sidebar-foreground: oklch(0.25 0.02 85);
+  --sidebar-accent: oklch(0.35 0.08 20);
+  --sidebar-accent-foreground: oklch(0.98 0.01 85);
+  --sidebar-border: oklch(0.8 0.02 85);
+  --sidebar-ring: oklch(0.35 0.08 20);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Merriweather', serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.7;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-bold text-foreground;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  h1 { @apply text-4xl md:text-6xl mb-8; }
+  h2 { @apply text-3xl md:text-4xl mb-6; }
+  h3 { @apply text-2xl md:text-3xl mb-4; }
+  
+  p { @apply mb-6; }
+  
+  a { 
+    @apply transition-all duration-200;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 1100px; /* Narrower for better readability */
+  }
+
+  .editorial-quote {
+    @apply border-l-2 border-primary pl-8 py-4 my-12 italic text-xl text-foreground/80;
+    font-family: 'Lora', serif;
+  }
+
+  .magazine-card {
+    @apply bg-transparent border-b border-border pb-8 mb-8 transition-all duration-300;
+  }
+  
+  .magazine-card:hover {
+    @apply border-primary/40;
+  }
+
+  .divider {
+    @apply h-px bg-border my-12 w-full;
+  }
+
+  .drop-cap::first-letter {
+    @apply text-6xl font-bold float-left mr-3 mt-2 text-primary;
+    font-family: 'Playfair Display', serif;
+    line-height: 0.8;
+  }
+  
+  .reading-width {
+    @apply max-w-2xl mx-auto;
+  }
+}
