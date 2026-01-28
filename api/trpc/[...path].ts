@@ -76,5 +76,5 @@ export default async function handler(req: Request): Promise<Response> {
  * ✅ IMPORTANT:
  * Vercel only supports "nodejs", NOT "nodejs20.x"
  */
-export const runtime = "nodejs";
+
 
