@@ -24,7 +24,7 @@ export const BorrowingTab = () => {
       <CardContent>
         {isLoading && <Loader2 className="mx-auto my-8 h-8 w-8 animate-spin text-primary" />}
         <div className="space-y-4">
-          {records?.map((record) => (
+          {records?.map((record: any) => (
             <div key={record.id} className="flex items-center justify-between p-3 bg-card rounded-md border">
               <div>
                 <h4 className="font-semibold">{record.book.title}</h4>

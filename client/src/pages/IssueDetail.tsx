@@ -101,7 +101,7 @@ export default function IssueDetail() {
             <div className="lg:col-span-9">
               <div className="space-y-32">
                 {issue.articles.length > 0 ? (
-                  issue.articles.map((article) => (
+                  issue.articles.map((article: any) => (
                     <section key={article.id} id={`article-${article.id}`} className="scroll-mt-12">
                       <div className="max-w-2xl">
                         <header className="mb-12">
@@ -117,7 +117,7 @@ export default function IssueDetail() {
                         </header>
                         
                         <div className="prose prose-lg prose-stone max-w-none">
-                          {article.content.split('\n\n').map((paragraph, idx) => (
+                          {article.content.split('\n\n').map((paragraph: any, idx: any) => (
                             <p 
                               key={idx} 
                               className={`text-lg leading-relaxed mb-8 text-foreground/90 font-light ${idx === 0 ? 'drop-cap' : ''}`}

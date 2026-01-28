@@ -9,7 +9,7 @@ import { TRPCError } from "@trpc/server";
 
 // Helper to check if user is admin
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
-  if (ctx.user.role !== 'admin') {
+  if (ctx.user?.role !== 'admin') {
     throw new TRPCError({ code: 'FORBIDDEN', message: 'Admin access required' });
   }
   return next({ ctx });
@@ -282,7 +282,7 @@ export const appRouter = router({
       .input(z.object({ recordId: z.number() }))
       .mutation(async ({ input }) => {
         const records = await db.getAllBorrowingRecords();
-        const record = records.find(r => r.id === input.recordId);
+        const record = records.find((r: any) => r.id === input.recordId);
 
         if (!record || record.isReturned) {
           throw new TRPCError({ code: 'NOT_FOUND', message: 'Borrowing record not found or already returned' });

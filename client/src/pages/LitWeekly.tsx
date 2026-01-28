@@ -45,7 +45,7 @@ export default function LitWeekly() {
           </div>
         ) : (
           <div className="grid gap-px bg-border border border-border">
-            {issues.map((issue) => (
+            {issues.map((issue: any) => (
               <Link key={issue.id} href={`/lit-weekly/${issue.id}`}>
                 <div className="group block bg-background p-8 md:p-12 hover:bg-card transition-colors duration-300 cursor-pointer">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">

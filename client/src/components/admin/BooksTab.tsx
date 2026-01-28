@@ -81,7 +81,7 @@ export const BooksTab = () => {
       <CardContent>
         {isLoading && <Loader2 className="mx-auto my-8 h-8 w-8 animate-spin text-primary" />}
         <div className="space-y-4">
-          {books?.map((book) => (
+          {books?.map((book: any) => (
             <div key={book.id} className="flex items-center justify-between p-3 bg-card rounded-md border">
               <div>
                 <h4 className="font-semibold">{book.title}</h4>

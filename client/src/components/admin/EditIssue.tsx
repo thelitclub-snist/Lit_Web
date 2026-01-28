@@ -101,7 +101,7 @@ export const EditIssue = () => {
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
-                    {issue?.articles.map(article => (
+                    {issue?.articles.map((article: any) => (
                         <div key={article.id} className="flex justify-between items-center p-3 bg-card rounded-md border">
                            <div>
                                <h4 className="font-semibold">{article.title}</h4>

@@ -96,7 +96,7 @@ export const IssuesTab = () => {
       <CardContent>
         {isLoading && <Loader2 className="mx-auto my-8 h-8 w-8 animate-spin text-primary" />}
         <div className="space-y-4">
-          {issues?.map((issue) => (
+          {issues?.map((issue: any) => (
             <div key={issue.id} className="flex items-center justify-between p-3 bg-card rounded-md border">
               <div>
                 <h4 className="font-semibold">{issue.title}</h4>

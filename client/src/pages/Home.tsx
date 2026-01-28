@@ -54,7 +54,7 @@ export default function Home() {
                   Inside this Edition
                 </h3>
                 <ul className="space-y-8">
-                  {latestIssue.articles.slice(0, 4).map((article) => (
+                  {latestIssue.articles.slice(0, 4).map((article: any) => (
                     <li key={article.id} className="group">
                       <Link href={`/lit-weekly/${latestIssue.id}#article-${article.id}`}>
                         <span className="block text-xs uppercase tracking-widest text-primary font-bold mb-1">
