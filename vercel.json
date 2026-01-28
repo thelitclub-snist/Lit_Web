@@ -1,23 +1,19 @@
 {
   "version": 2,
-
   "buildCommand": "pnpm run build",
-
   "outputDirectory": "dist/public",
-
   "routes": [
     {
       "src": "^/api/trpc/(.*)$",
-      "dest": "/api/trpc/[...path].ts"
+      "dest": "/api/trpc/[...all].ts"
     },
     {
       "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
-
   "functions": {
-    "api/trpc/[...path].ts": {
+    "api/trpc/[...all].ts": {
       "maxDuration": 30
     }
   }
